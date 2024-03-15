@@ -1,0 +1,79 @@
+DATA:
+  train_root: dataset/TrainDataset/
+  test_root: dataset/TestDataset/
+  val_root: dataset/TestDataset/CAMO/
+  dataset: CODtraindataset
+  model_save_path: pretrain/metapara_noattr_3_1_50/
+  save_map: True
+  map_save_path: exp/
+  exp_name: metapara_noattr_3_1_50
+  test_dataset: ['CAMO', 'COD10K', 'NC4K']
+
+TRAIN:
+  # Base Arch
+  clip_pretrain: pretrain/ViT-L-14-336px.pt
+  input_size: 336
+  word_len: 50
+  word_dim: 768 # align with fpn_out[1]
+  feats_layer_num: [7, 15, 23]
+  fpn_in: [768, 768, 768]  # defined by Vit
+  fpn_out: [384, 768, 1024]
+  sync_bn: True
+
+  # Fixation Decoder
+  fix_embed_dim: 768 # consist with CLIP out
+  fix_num_layers: 3
+  fix_num_head: 8
+  fix_dim_ffn: 2048
+  fix_out_size: 24 # fixation size: [batch, 1, 24*4, 24*4]
+
+  # Attribute prediction
+  num_attr: 17
+
+  # Multimodal Decoder
+  vis_dim: 768 # consist with CLIP out
+  num_layers: 1
+  num_head: 8
+  dim_ffn: 2048
+  dropout: 0.1
+  intermediate: False
+  use_attr: False  # use attribute prediction to projector
+  
+  # Training Setting
+  workers: 32  # data loader workersfor feature in vis_features:
+  workers_val: 16
+  epochs: 200
+  milestones: [150]
+  start_epoch: 0
+  batch_size: 12  # batch size for training
+  batch_size_val: 1  # batch size for validation during training, use 1 for metric compatibale consideration
+  base_lr: 0.0001
+  lr_decay: 0.2
+  lr_multi: 0.1
+  weight_decay: 0.
+  max_norm: 0.
+  manual_seed: 0
+  print_freq: 100
+  projector_dim: 512
+  cc_weight: 0.5
+  kl_weight: 1
+  consistency_weight: 0.2
+
+  # Resume & Save
+  weight:  # path to initial weight (default: none)
+  resume:  # path to latest checkpoint (default: none)
+  evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+  clean_cache: False  # clean cache after each epoch
+
+Distributed:
+  dist_url: tcp://localhost:3681
+  dist_backend: 'nccl'
+  multiprocessing_distributed: True
+  world_size: 1
+  rank: 0
+
+TEST:
+  test_split: val-test
+  visualize: True
+  save_fix : False
+  save_fix_attr : False
