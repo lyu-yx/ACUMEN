@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import logging
 from loguru import logger
 from multiprocessing import Manager
-from utils.dataset import tokenize
+from utils.dataset_cod import tokenize
 import utils.metrics as Measure
 from utils.misc import (AverageMeter, ProgressMeter, concat_all_gather, trainMetricGPU)
 
