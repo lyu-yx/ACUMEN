@@ -264,3 +264,4 @@ def test(test_loader, model, cur_dataset, args):
     print(f'{cur_dataset} done.')
 
     return {'Sm':sm, 'adpE':adpem, 'wF':wfm, 'M':mae}
+# git test
