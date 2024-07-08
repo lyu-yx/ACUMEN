@@ -7,7 +7,7 @@ import torch
 import torch.cuda.amp as amp
 import torch.distributed as dist
 import torch.nn.functional as F
-import wandb
+# import wandb
 import matplotlib.pyplot as plt
 import logging
 from loguru import logger
@@ -94,21 +94,21 @@ def train(train_loader, model, optimizer, scheduler, scaler, epoch, args):
 
         if (i + 1) % args.print_freq == 0:
             progress.display(i + 1)
-            if dist.get_rank() in [-1, 0]:
-                wandb.log(
-                    {
-                        "time/batch": batch_time.val,
-                        "time/data": data_time.val,
-                        "training/lr": lr.val,
-                        "training/total loss": total_loss_meter.val,
-                        "training/fix loss": fix_loss_meter.val,
-                        "training/kl loss": kl_loss_meter.val,
-                        "training/cc loss": cc_loss_meter.val,
-                        "training/mask loss": mask_loss_meter.val,
-                        "training/consistency loss": consistency_loss_meter.val,
-                        "training/attr_loss": attr_loss_meter.val,
-                    },
-                    step=epoch * len(train_loader) + (i + 1))
+            # if dist.get_rank() in [-1, 0]:
+            #     wandb.log(
+            #         {
+            #             "time/batch": batch_time.val,
+            #             "time/data": data_time.val,
+            #             "training/lr": lr.val,
+            #             "training/total loss": total_loss_meter.val,
+            #             "training/fix loss": fix_loss_meter.val,
+            #             "training/kl loss": kl_loss_meter.val,
+            #             "training/cc loss": cc_loss_meter.val,
+            #             "training/mask loss": mask_loss_meter.val,
+            #             "training/consistency loss": consistency_loss_meter.val,
+            #             "training/attr_loss": attr_loss_meter.val,
+            #         },
+            #         step=epoch * len(train_loader) + (i + 1))
 
 
 def val(test_loader, model, epoch, args, shared_vars, lock=None):

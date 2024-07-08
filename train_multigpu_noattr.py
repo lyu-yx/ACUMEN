@@ -21,7 +21,7 @@ from torch.optim.lr_scheduler import MultiStepLR
 from multiprocessing import Manager
 
 import utils.config as config
-import wandb
+# import wandb
 from utils.dataset_cod import CamObjDataset, TestDataset
 from engine.engine import train, val
 from model import build_segmenter
@@ -91,13 +91,13 @@ def main_worker(gpu, args, shared_vars):
                             rank=args.rank)
 
     # wandb
-    if args.rank == 0:
-        wandb.init(job_type="training",
-                   mode="online",
-                   config=args,
-                   project="CLIPCOD-model-with-desc$vision&fix",
-                   name=args.exp_name,
-                   tags=[args.dataset, args.clip_pretrain])
+    # if args.rank == 0:
+    #     wandb.init(job_type="training",
+    #                mode="online",
+    #                config=args,
+    #                project="CLIPCOD-model-with-desc$vision&fix",
+    #                name=args.exp_name,
+    #                tags=[args.dataset, args.clip_pretrain])
     dist.barrier(device_ids=[args.gpu])
 
     # build model
@@ -210,8 +210,8 @@ def main_worker(gpu, args, shared_vars):
             torch.cuda.empty_cache()
 
     # time.sleep(2)
-    if dist.get_rank() == 0:
-        wandb.finish()
+    # if dist.get_rank() == 0:
+    #     wandb.finish()
 
     # logger.info("* Best IoU={} * ".format(best_IoU))
     total_time = time.time() - start_time
