@@ -7,3 +7,5 @@ loguru
 pycocotools
 matplotlib
 tqdm
+scikit-learn
+opencv-pythons

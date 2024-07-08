@@ -3,7 +3,6 @@ import os
 import warnings
 
 import cv2
-from thop import profile
 import torch
 import torch.nn.parallel
 import torch.utils.data as data

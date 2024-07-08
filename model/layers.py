@@ -3,8 +3,8 @@ import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch_geometric.nn import GCNConv, global_mean_pool
-from torch_geometric.data import Data
+# from torch_geometric.nn import GCNConv, global_mean_pool
+# from torch_geometric.data import Data
 
 def conv_layer(in_dim, out_dim, kernel_size=1, padding=0, stride=1):
     return nn.Sequential(
