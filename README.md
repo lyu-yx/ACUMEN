@@ -61,7 +61,7 @@ branch and a visual branch, with the textual branch active only during training 
 
 ## Experiment Setting
 
-install dependencies in ·requirements.txt·
+install dependencies in *requirements.txt*
 torch1.9 + cuda10.2 is recomanded
 
 
