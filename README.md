@@ -3,7 +3,8 @@
 
 
 ## News 
-[2024-08-23] Early access from [arxiv](https://arxiv.org/abs/2408.12086).
+[2024-09-04] Poster updated.  
+[2024-08-23] Early access from [arxiv](https://arxiv.org/abs/2408.12086).  
 [2024-07-01] Our work is accepted by ECCV 2024! Congratulations and see you in Milano! :laughing:  
 [2024-03-15] First commit.
 
