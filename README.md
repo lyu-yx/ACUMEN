@@ -70,7 +70,7 @@ torch1.9 + cuda10.2 is recomanded
 
 ACUMEN reuslts for _CAMO_, _COD10K_, and _NC4K_ can be found in [ACUMEN results](https://drive.google.com/file/d/1Xywb2vvgiIR8SjSV-guWswSCNsLVvFnF/view?usp=sharing).
 
-Manage the traning and testing dataset like this, Desc is provided by [COD-TAX](https://drive.google.com/file/d/1489Q627rHZFFkOMaXU-6did6rOBEexRM/view?usp=sharing) and fixation information can be found from [COD-Rank-Localize-and-Segment](https://github.com/JingZhang617/COD-Rank-Localize-and-Segment). For reproduction convenience, we provide the all in one data [Data_all_in_one](https://drive.google.com/file/d/1T_-zg3DKt-i27nDqBmhtiyANNdFz07jG/view?usp=sharing).
+Manage the traning and testing dataset like this, Desc is provided by [COD-TAX](https://drive.google.com/file/d/1489Q627rHZFFkOMaXU-6did6rOBEexRM/view?usp=sharing) and fixation information can be found from [COD-Rank-Localize-and-Segment](https://github.com/JingZhang617/COD-Rank-Localize-and-Segment). For reproduction convenience, we provide the all in one data [Data_all_in_one](https://drive.google.com/file/d/1cwMgU4LninedDMzYcWjXXn3gyfPFS22p/view?usp=sharing).
     
     ACUMEN
         --dataset
