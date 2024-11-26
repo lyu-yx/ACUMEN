@@ -68,9 +68,9 @@ install dependencies in *requirements.txt*
 torch1.9 + cuda10.2 is recomanded
 
 
-ACUMEN reuslts for _CAMO_, _COD10K_, and _NC4K_ can be found in [ACUMEN results](https://drive.google.com/file/d/1Xywb2vvgiIR8SjSV-guWswSCNsLVvFnF/view?usp=sharing).
+ACUMEN reuslts for _CAMO_, _COD10K_, and _NC4K_ can be found in [ACUMEN results](https://bhpan.buaa.edu.cn/link/AA4D52DA2106BD4AEB9BEC8D3FFB7AB1E4).
 
-Manage the traning and testing dataset like this, Desc is provided by [COD-TAX](https://drive.google.com/file/d/1489Q627rHZFFkOMaXU-6did6rOBEexRM/view?usp=sharing) and fixation information can be found from [COD-Rank-Localize-and-Segment](https://github.com/JingZhang617/COD-Rank-Localize-and-Segment). For reproduction convenience, we provide the all in one data [Data_all_in_one](https://drive.google.com/file/d/1cwMgU4LninedDMzYcWjXXn3gyfPFS22p/view?usp=sharing).
+Manage the traning and testing dataset like this, Desc is provided by [COD-TAX](https://bhpan.buaa.edu.cn/link/AA4D52DA2106BD4AEB9BEC8D3FFB7AB1E4) and fixation information can be found from [COD-Rank-Localize-and-Segment](https://github.com/JingZhang617/COD-Rank-Localize-and-Segment). For reproduction convenience, we provide the all in one data [Data_all_in_one](https://bhpan.buaa.edu.cn/link/AA4D52DA2106BD4AEB9BEC8D3FFB7AB1E4).
     
     ACUMEN
         --dataset
@@ -89,7 +89,7 @@ Manage the traning and testing dataset like this, Desc is provided by [COD-TAX](
                 --GT
           
 
-put pretrained `ViT-L-14-336px.pt` here. [pretrained ViT](https://drive.google.com/file/d/1Wm9_Dl6M5ETR9qZod3CwWEToMCfDotjg/view?usp=sharing).
+put pretrained `ViT-L-14-336px.pt` here. [pretrained ViT](https://bhpan.buaa.edu.cn/link/AA4D52DA2106BD4AEB9BEC8D3FFB7AB1E4).
 
 
     ACUMEN
@@ -102,7 +102,7 @@ For the training process, run:
     python train_multigpu_noattr.py --config config/codclip_vit_L14@336_noattr_3_1_50.yaml
 
 ## Testing / Inference
-Put the pretrained checkpoint [here](https://drive.google.com/file/d/1lBMEbeST62KIq4MtJnI9hq19krae0Nxw/view?usp=sharing).
+Put the pretrained checkpoint [here](https://bhpan.buaa.edu.cn/link/AA4D52DA2106BD4AEB9BEC8D3FFB7AB1E4).
 
     ACUMEN
         --exp/metapara_noattr_3_1_50
