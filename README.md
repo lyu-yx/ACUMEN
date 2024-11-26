@@ -111,3 +111,19 @@ Put the pretrained checkpoint [here](https://bhpan.buaa.edu.cn/link/AA4D52DA2106
 And run:
 
     python test.py --config config/codclip_vit_L14@336_noattr_3_1_50.yaml
+
+## Citation
+
+```
+@InProceedings{10.1007/978-3-031-73001-6_18,
+author="Zhang, Hong and Lyu, Yixuan and Yu, Qian and Liu, Hanyang and Ma, Huimin and Yuan, Ding and Yang, Yifan",
+title="Unlocking Attributes' Contribution to Successful Camouflage: A Combined Textual and Visual Analysis Strategy",
+booktitle="Computer Vision -- ECCV 2024",
+year="2025",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="315--331",
+isbn="978-3-031-73001-6"
+}
+
+```
